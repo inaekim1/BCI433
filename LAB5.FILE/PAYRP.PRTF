@@ -1,0 +1,61 @@
+000100221029     A          R TITLE
+000101221029     A                                  2  6DATE
+000102221029     A                                      EDTCDE(Y)
+000103221029     A                                  2 16TIME
+000104221029     A                                  2 57'Weekly Pay Report'
+000105221029     A                                  2103'Page:'
+000106221029     A                                  2109PAGNBR
+000107221029     A                                  3  6'Inae Kim'
+000108221029     A            SHIFTTYPE     30      3 54
+000109221029     A          R COLHDG                    SPACEB(2)
+000110221029     A                                     6'Employee'
+000111221029     A                                    20'Work'
+000112221029     A                                    31'Pay'
+000113221029     A                                    42'Hourly'
+000114221029     A                                    56'Hours'
+000115221029     A                                    69'Regular'
+000116221029     A                                    85'Overtime'
+000117221029     A                                   102'Total'
+000118221029     A                                     6'Number'
+000119221029     A                                      SPACEB(1)
+000120221029     A                                    20'Shift'
+000121221029     A                                    31'Class'
+000122221029     A                                    42'Rate'
+000123221029     A                                    56'Worked'
+000124221029     A                                    69'Pay'
+000125221029     A                                    85'Pay'
+000126221029     A                                   102'Pay'
+000127221029     A          R EMPDETAIL                 SPACEB(2)
+000128221029     A            EMPNUM    R              6
+000129221029     A                                      REFFLD(SHIFTWEEK/EMPNUM SENECAPAY/S-
+000130221029     A                                      HIFTWEEK)
+000131221029     A                                      EDTWRD('0  -   -   -')
+000132221029     A            WORKSHIFT R             20
+000133221029     A                                      REFFLD(SHIFTWEEK/WORKSHIFT +
+000134221029     A                                      SENECAPAY/SHIFTWEEK)
+000135221029     A            PAYCLASS  R             31REFFLD(SHIFTWEEK/PAYCLASS +
+000136221029     A                                      SENECAPAY/SHIFTWEEK)
+000137221029     A            HOURLYRATE     5  2     42EDTCDE(1)
+000138221029     A            HRSWORKED R             56REFFLD(SHIFTWEEK/HRSWORKED +
+000139221029     A                                      SENECAPAY/SHIFTWEEK)
+000140221029     A            REGULARPAY     7  2     69EDTCDE(1)
+000141221029     A            OVERPAY        7  2     85EDTCDE(1)
+000142221029     A            WEEKLYPAY      7  2    102EDTCDE(1)
+000143221029     A          R TOTALS                    SPACEB(3)
+000144221029     A                                    51'Totals:'
+000145221029     A            TOTREGPAY      9  2     65EDTCDE(1 $)
+000146221029     A            TOTOVTPAY      9  2     81EDTCDE(1 $)
+000147221029     A            TOTWKPAY       9  2     98EDTCDE(1 $)
+000148221029
+000149221029     A*%%RS+<record-sequences>
+000150221029     A*%%RS+ <sequence name="REPORT1">
+000151221029     A*%%RS+  <device type="printer" width="132" height="66" />
+000152221029     A*%%RS+  <record-write record-format="TITLE" />
+000153221029     A*%%RS+  <record-write record-format="COLHDG" />
+000154221029     A*%%RS+  <record-write record-format="EMPDETAIL" />
+000155221029     A*%%RS+  <record-write record-format="TOTALS" />
+000156221029     A*%%RS+ </sequence>
+000157221029     A*%%RS+ <sequence name="Untitled1">
+000158221029     A*%%RS+  <device type="printer" width="132" height="66" />
+000159221029     A*%%RS+ </sequence>
+000160221029     A*%%RS </record-sequences>

@@ -1,0 +1,76 @@
+000100220926     A          R SALEINFO                  CF03(03 'Exit Program')
+000101221003     A                                      CF06(06 'Use Standard Costs')
+000103220926     A                                  1 71DATE
+000104220926     A                                      EDTCDE(Y)
+000105220926     A                                  1  2USER
+000106220926     A                                  1 19'R E A L  E S T A T E  T R A N S A -
+000107220926     A                                      C T I O N'
+000108220926     A                                  4  2'House Price:'
+000109220927     A            HOUSEPRICE     7Y 0B  4 15EDTCDE(2)
+000110220927     A  79                                  DSPATR(PR)
+000111220927     A  81                                  DSPATR(PC)
+000112220927     A  81                                  DSPATR(RI)
+000113220926     A  81                              4 25'Value must not be zero'
+000114220926     A                                  7  2'Seller Principal Residence?'
+000115220927     A            PRESIDENCE     1   B  7 30
+000116220927     A  79                                  DSPATR(PR)
+000117220927     A  82                                  DSPATR(PC RI)
+000118220927     A                                      VALUES('Y' 'N')
+000119220926     A  82                              7 33'Y or N'
+000120220927     A  82                                  DSPATR(RI)
+000121220926     A                                  2  2'Inae Kim'
+000122220926     A                                      DSPATR(RI)
+000123220926     A                                  6  2'S E L L E R '
+000124220926     A                                      DSPATR(RI)
+000125220926     A                                  6 50'B U Y E R '
+000126220926     A                                      DSPATR(RI)
+000127220926     A                                  7 50'First Time Buyer?'
+000131220926     A            FIRSTTIME      1   B  7 68
+000132220927     A  79                                  DSPATR(PR)
+000133220927     A  83                                  DSPATR(PC RI)
+000134220927     A                                      VALUES('Y' 'N')
+000135220927     A  83                              7 70'Y or N'
+000136220927     A  83                                  DSPATR(RI)
+000137220926     A                                  9  2'Agent Commission %:'
+000138220926     A            AGENTRATE      4Y 2B  9 23EDTCDE(1)
+000139221005     A  79                                  DSPATR(PR)
+000140221003     A                                 10 51'C O S T S'
+000142221003     A                                 12 46'Legal Fees:'
+000143221003     A                                 13 46'Survey Fee:'
+000144221003     A                                 14 45'Title Insurance:'
+000145221003     A                                 15 45'Home Inspection:'
+000146221005     A            LEGALFEES      4Y 0B 12 63EDTCDE(2)
+000147221005        79                                    DSPATR(PR)
+000148221005     A            SURVEYFEE      4Y 0B 13 63EDTCDE(2)
+000149221005        79                                    DSPATR(PR)
+000150221005     A            TITLEINS       4Y 0B 14 63EDTCDE(2)
+000151221005        79                                     DSPATR(PR)
+000152221005     A            INSPECTION     4Y 0B 15 63EDTCDE(2)
+000153221005        79                                    DSPATR(PR)
+000154221003     A                                 11 46'F6 - Use Standard Costs'
+000155221003     A                                      COLOR(RED)
+000158220926     A          R RESULT                    OVERLAY
+000159220926     A                                      CF03(03 'Exit Program')
+000160221003     A                                      CF06(06)
+000161221003     A                                 17  3'Commission total:'
+000162221003     A            COMMISSION     8  2O 17 23EDTCDE(1)
+000163221003     A                                 18  2'Capital Gains Tax:'
+000164221003     A            TOTALCOSTS     7  2  17 64EDTCDE(1)
+000165221003     A                                 17 41'Total of Above Costs:'
+000166221003     A            CAPITALGNS     8  2  18 23EDTCDE(1)
+000167221003     A                                 18 44'Land Transfer Tax:'
+000168221003     A            LANDTAX        8  2  18 64EDTCDE(1)
+000169221003     A                                 20  4'Seller Nets:'
+000170221003     A            SELLERNETS     9  2  20 21EDTCDE(1)
+000171221003     A                                 19 51'Buyer Pays:'
+000172221003     A            BUYERPAYS      9  2  19 63EDTCDE(1)
+000175221003     A                                 22  5'F3 - Exit'
+000176221003     A  85                             21 49'UNREALISTIC COSTS SUPPLIED  '
+000177221003     A                                      DSPATR(RI)
+000178220927     A*%%RS+<record-sequences>
+000179220927     A*%%RS+ <sequence name="Untitled">
+000180220927     A*%%RS+  <device type="display" width="80" height="24" />
+000181220927     A*%%RS+  <record-write record-format="SALEINFO" />
+000182220927     A*%%RS+  <record-write record-format="RESULT" />
+000183220927     A*%%RS+ </sequence>
+000184220927     A*%%RS </record-sequences>

@@ -1,0 +1,28 @@
+000100220926     A*%%TS  SD  20220926  081010  PANGBORN    REL-V7R4M0  5770-WDS
+000200220926     A*%%EC
+000300220926     A                                      DSPSIZ(24 80 *DS3)
+000400220926     A          R RECORD1
+000500220926     A*%%TS  SD  20220926  081010  PANGBORN    REL-V7R4M0  5770-WDS
+000501221010     A                                      CF03(03)
+000502221017     A                                      CF21(21 'QUSCMDLN')
+000600220926     A                                  1 64DATE
+000700220926     A                                      EDTCDE(Y)
+000800220926     A                                  2 64TIME
+000900220926     A                                  1 38'Lab 4'
+001000220926     A                                  5  3'Please select one of the following-
+001100220926     A                                       options:'
+001200220926     A                                  9 14'2.  Work with source code'
+001300220926     A                                 16 17'Option:'
+001400220926     A                                 23  4'F3=Exit'
+001500220926     A                                 23 17'F21=Comand Line '
+001600221010     A                                  1  3'Inae Kim'
+001700220926     A                                  2  3'Your Full Name Above'
+001800220926     A                                 13 14'6.  Previous sign on by user'
+001900220926     A                                  8 14'1.  Run Real Estate Application'
+002000220926     A                                 12 14'5.  QGPL Library Creation Authorit-
+002100220926     A                                      y Setting'
+002200220926     A                                 10 14'3.  Set the Startup Program'
+002300220926     A                                 11 14'4.  User''s Startup Program Name'
+002301221012     A  30        OPTION         1   B 16 26DSPATR(RI PC)
+002303221010     A  30                             16 30'Invalid Entry'
+002304221010     A  10        MSGTXT1       70   O 19  6

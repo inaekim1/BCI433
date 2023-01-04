@@ -1,0 +1,26 @@
+000100221205       Ctl-Opt NoMain;
+000101221205
+000102221205        /COPY LAB8,PROTO
+000103221205
+000104221205       DCL-Proc CalcTax Export;
+000105221205         Dcl-Pi *N Packed(8:2);
+000106221205           HPrice Packed(7:0);
+000107221205         END-PI;
+000108221205
+000109221205       DCL-S Tax Packed(8:2);
+000110221205
+000111221205        SELECT;
+000114221205           When HPrice > 2000000;
+000115221205             EVAL(H) Tax = HPrice * .025;
+000116221205           When HPrice > 399999;
+000117221205             EVAL(H) Tax = HPrice * .02;
+000118221205           When HPrice > 249999;
+000119221205             EVAL(H) Tax = HPrice * .015;
+000120221205           When HPrice > 54999;
+000121221205             EVAL(H) Tax = HPrice * .01;
+000122221205           Other;
+000123221205             EVAL(H) Tax = HPrice * .005;
+000124221205         ENDSL;
+000125221205        Return Tax;
+000126221205
+000127221205       END-PROC;

@@ -1,0 +1,24 @@
+000100221029     A          R RECORD1
+000101221029     A                                  2  7USER
+000102221029     A                                  2 66DATE
+000103221029     A                                      EDTCDE(Y)
+000104221029     A                                  3 66TIME
+000105221029     A                                  2 22'S E N E C A   Payroll Program Comp-
+000106221029     A                                      leted'
+000107221029     A                                  3  7'Inae Kim'
+000108221029     A                                  5 12'Rates:'
+000109221029     A                                  6 22'Day Hours:'
+000110221029     A                                  7 22'Afternoon Hours:'
+000111221029     A                                  8 22'Night Hours:'
+000112221108     A                                 12 11'Totals:'
+000113221108     A                                 14 21'Regular Pay:'
+000114221108     A                                 15 21'Overtime Pay:'
+000115221108     A                                 16 21'Company Payout:'
+000116221108     A            TOTREGPAY      9  2O 14 40EDTCDE(1)
+000117221108     A            TOTWKPAY       9  2O 16 40EDTCDE(1 $)
+000118221108     A            TOTOVTPAY      9  2O 15 40EDTCDE(1)
+000119221029     A            DAYHRS         5Y 2O  6 45EDTCDE(1)
+000120221029     A            AFTHRS         5Y 2O  7 45EDTCDE(1)
+000121221029     A            NIGHTHRS       5Y 2O  8 45EDTCDE(1)
+000122221108     A            SHIFTTYPE     30   O 11 21
+000123221029

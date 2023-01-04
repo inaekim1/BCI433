@@ -1,0 +1,51 @@
+000100211111     A          R REPORTITLE
+000200220627     A                                  2 28'C u s t o m e r   O r d e r s  Whe-
+000201220627     A                                      n an Extended Price Is >'
+000202220627     A            SPENDLIMIT     6  2   2 87EDTCDE(1)
+000203221129     A                                  2  4'Inae Kim'
+000300211111     A          R COLHEADING
+000400211111     A                                     3'Order Date'
+000500211111     A                                      SPACEB(2)
+000600211111     A                                    15'Order'
+000700211111     A                                    25' Full Name'
+000800211111     A                                    59'Part'
+000900211111     A                                    67'Quantity'
+001000211111     A                                    81'Price'
+001100211111     A                                    92'Extended'
+001200211111     A                                    15'Number'
+001300211111     A                                      SPACEB(1)
+001400211111     A                                    58'Number'
+001500211111     A                                    94'Price'
+001501220627     A                                   118'*'
+001502220627     A                                      SPACEB(1)
+001600211203     A          R NEXTCUST                  SPACEB(1)
+001700211111     A            ORDERDATE R              3
+001800220718     A                                      REFFLD(ORDER1/ORDDAT BCI433LIB/ORDE-
+001900220718     A                                      R1)
+002000220718     A            ORDERNUM  R             15REFFLD(ORDER1/ORDNUM BCI433LIB/ORDE-
+002100220718     A                                      R1)
+002200211111     A            CUSTNAME      31        23
+002300211111     A          R ORDDETAIL
+002400220718     A            PARTNUM   R             59REFFLD(ORDERLINE/OLPNUM BCI433LIB/O-
+002500220718     A                                      RDERLINE)
+002600211111     A                                      SPACEB(1)
+002700220718     A            QUANTITY  R             70REFFLD(ORDERLINE/OLNORD BCI433LIB/O-
+002800220718     A                                      RDERLINE)
+002900211111     A                                      EDTCDE(1)
+003000220718     A            QTPRICE   R             80REFFLD(ORDERLINE/OLQPRC BCI433LIB/O-
+003100220718     A                                      RDERLINE)
+003200211111     A                                      EDTCDE(1)
+003300211111     A            EXTPRICE       7  2     92EDTCDE(1)
+003400211111     A          R ORDTOTAL                  SPACEB(1)
+003500211111     A                                    78'Order Total:'
+003600211111     A            TOTALORD       7  2     91EDTCDE(1 $)
+003700211111     A                                      SPACEA(1)
+003800211111     A          R ALLORDERS                 SPACEB(1)
+003900211111     A                                    68'Total For All Orders:'
+004000211111     A            TOTALALL       8  2     90
+004100211111     A                                      EDTCDE(1 $)
+004200220627     A          R NOTINCLUDE                SPACEB(1)
+005006220627     A                                     3'Number of order lines not included-
+005007220627     A                                       in report:'
+005009220627     A            UNDERLIMIT     4  0     49EDTCDE(1)
+005100000000

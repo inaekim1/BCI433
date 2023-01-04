@@ -1,0 +1,51 @@
+000100221029     A          R TITLE
+000101221029     A                                  1 45'Weekly Payroll Report'
+000102221029     A                                  1 89'Page:'
+000103221029     A                                  1 94PAGNBR
+000104221029     A                                  1  3DATE(*YY)
+000105221029     A                                      EDTCDE(Y)
+000106221029     A                                  1 15TIME
+000107221102     A                                  2  3'Name: Inae Kim'
+000108221102     A                                  3  3 ' '
+000109221108     A            SHIFTTYPE     30      3 43
+000110221029     A          R COLHDG                    SPACEB(1)
+000111221029     A                                      SPACEA(1)
+000112221029     A                                     6'Employee'
+000113221029     A                                    19'Work'
+000114221029     A                                    29'Pay'
+000115221029     A                                    37'Hourly'
+000116221029     A                                    47'Hours'
+000117221029     A                                    56'Regular'
+000118221029     A                                    71'Overtime'
+000119221029     A                                    89'Total'
+000120221029     A                                     6'Number'
+000121221029     A                                      SPACEB(1)
+000122221029     A                                    19'Shift'
+000123221029     A                                    29'Class'
+000124221029     A                                    37'Rate'
+000125221029     A                                    47'Worked'
+000126221029     A                                    56'Pay'
+000127221029     A                                    73'Pay'
+000128221029     A                                    90'Pay'
+000129221029     A          R EMPDETAIL                 SPACEB(1)
+000130221029     A            EMPNUM    R    9S 0      5REFFLD(SHIFTWEEK/EMPNUM SENECAPAY/S-
+000131221029     A                                      HIFTWEEK)
+000132221029     A                                      EDTWRD('0   -   -   -')
+000133221029     A            WORKSHIFT R    1A       20REFFLD(SHIFTWEEK/WORKSHIFT +
+000134221029     A                                      SENECAPAY/SHIFTWEEK)
+000135221029     A            PAYCLASS  R             30REFFLD(SHIFTWEEK/PAYCLASS +
+000136221029     A                                      SENECAPAY/SHIFTWEEK)
+000137221029     A            HOURLYRATE     5  2     37EDTCDE(1)
+000138221029     A            HRSWORKED R             48REFFLD(SHIFTWEEK/HRSWORKED +
+000139221029     A                                      SENECAPAY/SHIFTWEEK)
+000140221029     A                                      EDTCDE(1)
+000141221029     A            REGULARPAY     7  2     55EDTCDE(1)
+000142221029     A            OVERPAY        7  2     70EDTCDE(2)
+000143221029     A            WEEKLYPAY      7  2     86EDTCDE(1)
+000144221029     A          R TOTALS                    SPACEB(2)
+000145221029     A                                    41'Totals:'
+000146221029     A            TOTREGPAY      9  2     51
+000147221029     A                                      EDTCDE(1 $)
+000148221029     A            TOTOVTPAY      9  2     66EDTCDE(1 $)
+000149221029     A            TOTWKPAY       9  2     82EDTCDE(1 $)
+000150221029

@@ -1,0 +1,1 @@
+000100220917     FSTUDACCTS IP   E             DISK

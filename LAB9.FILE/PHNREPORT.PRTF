@@ -1,0 +1,65 @@
+000100200709     A          R NEWPAGE
+000200190313     A                                  2  6'User:'
+000300190313     A                                  1  1'Timestamp:'
+000400190313     A                                  3  3'Server:'
+000500190313     A                                  1105'Page:'
+000600190313     A                                  1112PAGNBR
+000700190313     A            TIMESTAMP       Z     1 12
+000800190313     A            USER          10      2 12
+000900190313     A            SERVER        10      3 12
+001000190313     A                                  2 48'P H O N E   L O G   R E P O R T'
+001100211104     A                                  5 12'Sales'
+001200211104     A                                  6 13'ID'
+001300211104     A                                  5  2'Customer'
+001400211104     A                                  5 24'Customer Name'
+001500211104     A                                  6  3'Number'
+001600211104     A                                  6 70'Called'
+001700211104     A                                  5 54'Telephone'
+001800211104     A                                  5 69'Last Date'
+001900211104     A                                  5 83'Oldest Call'
+002000211104     A                                  6 86'Date'
+002100220627     A                                  5 97'Next Call'
+002200220627     A                                  6 99'Date'
+002300190314     A                                  7131'*'
+002301221120     A                                  2105'Inae Kim'
+002400220627     A          R RPTLINE                   SPACEB(1)
+002401220627     A            CSTNUM    R              2REFFLD(CUSTSU22/CSTNUM BCI433LIB/CU-
+002402220627     A                                      STSU22)
+002403220627     A            SLSNUMBER R             11REFFLD(CONTACTS22/SLSNUMBER +
+002404220627     A                                      BCI433LIB/CONTACTS22)
+002405220627     A            CSTNAM    R             18REFFLD(CUSTSU22/CSTNAM BCI433LIB/CU-
+002406220627     A                                      STSU22)
+002903220623     A            PHONE     R             52REFFLD(CONTACTS22/PHONE BCI433LIB/C-
+002904220623     A                                      ONTACTS22)
+002905220623     A                                      EDTWRD('0(   )&   -    ')
+002906220623     A            LCALLD    R             69REFFLD(CONTACTS22/LCALLD +
+002907220623     A                                      BCI433LIB/CONTACTS22)
+003700211104     A            HIGHLIGHT      8        85
+003800220623     A            NEXTCDATE       L       98
+003900220408     A            ERRORMSG      15       112
+004000220408     A          R SUMMARY                   SPACEB(3)
+004100190313     A                                    12'S U M M A R Y   I N F O R M A T I -
+004200190313     A                                      O N'
+004300220623     A                                     2'CONTACTS22 Total Records:'
+004400190313     A                                      SPACEB(2)
+004500190313     A            CONTACTT       5  0     27EDTCDE(1)
+004600190313     A                                    44'Oldest Last Callback Date:'
+004700200709     A            OLDESTDATE      L       71
+004800220623     A                                     2'CUSTSU22 Total Records:'
+004900190313     A                                      SPACEB(1)
+005000190313     A            CUSTOMERT      5  0     27EDTCDE(1)
+005100190313     A                                    39'Most Recent Last Callback Date:'
+005200200709     A            MOSTRECENT      L       71
+005601220627     A                                     1'Total Records with an Unknown Last-
+005602220408     A                                       Callback Date:'
+005603220627     A                                      SPACEB(2)
+005604220408     A            UNKNOWNT       5  0     52EDTCDE(1)
+005700000000
+005800220408     A*%%RS+<record-sequences>
+005900220408     A*%%RS+ <sequence name="Untitled">
+006000220408     A*%%RS+  <device type="printer" width="132" height="66" />
+006100220408     A*%%RS+  <record-write record-format="NEWPAGE" />
+006200220408     A*%%RS+  <record-write record-format="RPTLINE" />
+006300220408     A*%%RS+  <record-write record-format="SUMMARY" />
+006400220408     A*%%RS+ </sequence>
+006500220408     A*%%RS </record-sequences>

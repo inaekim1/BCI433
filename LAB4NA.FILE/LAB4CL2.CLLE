@@ -1,0 +1,53 @@
+000100221012             DCLF       LAB4DSP
+000101221010             SNDRCVF
+000102221010             DOWHILE    (&IN03 = '0')
+000103221010                SELECT
+000105221010                   WHEN       (&OPTION = '1') DO
+000106221010                      IF         (&IN30 = '1')  THEN(CHGVAR     &IN30 '0')
+000107221010                      CHGVAR     &MSGTXT1 ('Option 1')
+000108221010                      CHGVAR     &IN10  '1'
+000109221010                   ENDDO
+000110221010                   WHEN       (&OPTION = '2') CALLSUBR OPTION2
+000111221010                   WHEN       (&OPTION = '3') CALLSUBR OPTION3
+000112221010                   WHEN       (&OPTION = '4') CALLSUBR OPTION4
+000113221010                   WHEN       (&OPTION = '5') CALLSUBR OPTION5
+000114221010                   WHEN       (&OPTION = '6') CALLSUBR OPTION6
+000115221010                   OTHERWISE  CALLSUBR INVALID
+000116221010
+000118221010                ENDSELECT
+000123221010                SNDRCVF
+000124221010             ENDDO
+000125221010
+000126221010             SUBR       OPTION2
+000127221010                IF         (&IN30 = '1')  THEN(CHGVAR     &IN30 '0')
+000128221010                CHGVAR     &IN10  '1'
+000129221010                CHGVAR     &MSGTXT1 ('Option 2')
+000130221010             ENDSUBR
+000131221010             SUBR       OPTION3
+000132221010                IF         (&IN30 = '1')  THEN(CHGVAR     &IN30 '0')
+000133221010                CHGVAR     &IN10  '1'
+000134221010                CHGVAR     &MSGTXT1 ('Option 3')
+000137221010             ENDSUBR
+000138221010             SUBR       OPTION4
+000139221010                IF         (&IN30 = '1')  THEN(CHGVAR     &IN30 '0')
+000140221010                CHGVAR     &IN10  '1'
+000141221010                CHGVAR     &MSGTXT1 ('Option 4')
+000143221010             ENDSUBR
+000144221010             SUBR       OPTION5
+000145221010                IF         (&IN30 = '1')  THEN(CHGVAR     &IN30 '0')
+000146221010                CHGVAR     &IN10  '1'
+000147221010                CHGVAR     &MSGTXT1 ('Option 5')
+000149221010             ENDSUBR
+000150221010             SUBR       OPTION6
+000151221010                IF         (&IN30 = '1') THEN(CHGVAR     &IN30 '0')
+000152221010                CHGVAR     &IN10  '1'
+000153221010                CHGVAR     &MSGTXT1 ('Option 6')
+000154221010
+000155221010             ENDSUBR
+000162221010
+000163221010             SUBR       INVALID
+000164221010                CHGVAR     &IN30 '1'
+000165221010                CHGVAR     &IN10 '0'
+000166221010             ENDSUBR
+000167221010
+000168221010

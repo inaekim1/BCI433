@@ -1,0 +1,100 @@
+000100221012             DCLF       LAB4DSP
+000102221017             DCL        &OUTQLIB *CHAR 10
+000103221017             DCL        &OUTQ *CHAR 10
+000104221017             DCL        &MSGQ *CHAR 10
+000105221017             DCL        &MSGQLIB *CHAR 10
+000107221017             DCL        &DATE *CHAR 8
+000108221017             DCL        &TIME *CHAR 8
+000109221017             DCL        &PVSN *CHAR 13
+000110221017             DCL        &MAX *CHAR 6
+000111221017             DCL        &QGPL *CHAR 10
+000112221017             DCL        &QCRTAUT *CHAR 10
+000113221017
+000114221010             SNDRCVF
+000115221010             DOWHILE    (&IN03 = '0')
+000116221010                SELECT
+000117221017                   WHEN       (&OPTION = '1' *OR &OPTION = '01') DO
+000118221010                      IF         (&IN30 = '1')  THEN(CHGVAR     &IN30 '0')
+000119221017                      CALL       REALESTATE
+000120221017                      CHGVAR     &MSGTXT1 ('The students Real Estate RPGLE program was run')
+000121221017                      CHGVAR     &MSGTXT2 ('CLLE Programs can manage how an RPGLE Business +
+000122221017                                   Application is run')
+000123221010                      CHGVAR     &IN10  '1'
+000124221010                   ENDDO
+000125221017                   WHEN       (&OPTION = '2' *OR &OPTION = '02') CALLSUBR OPTION2
+000126221017                   WHEN       (&OPTION = '3' *OR &OPTION = '03') CALLSUBR OPTION3
+000127221017                   WHEN       (&OPTION = '4' *OR &OPTION = '04') CALLSUBR OPTION4
+000128221017                   WHEN       (&OPTION = '5' *OR &OPTION = '05') CALLSUBR OPTION5
+000129221017                   WHEN       (&OPTION = '6' *OR &OPTION = '06') CALLSUBR OPTION6
+000130221010                   OTHERWISE  CALLSUBR INVALID
+000131221010
+000132221010                ENDSELECT
+000133221017                SELECT
+000134221017                   WHEN       (&IN21 = '1') CALL QUSCMDLN
+000135221017                ENDSELECT
+000136221017
+000137221010                SNDRCVF
+000138221010             ENDDO
+000139221010
+000140221010             SUBR       OPTION2
+000141221010                IF         (&IN30 = '1')  THEN(CHGVAR     &IN30 '0')
+000142221010                CHGVAR     &IN10  '1'
+000143221017                WRKOBJPDM  *CURLIB OBJATR('PF-SRC')
+000144221017                CHGVAR     &MSGTXT1 ('You were given access to all the source code in         +
+000145221017                             your current library')
+000146221017                CHGVAR     &MSGTXT2 ('CLLE Programs can provide easy access to your objects on +
+000147221017                             the system')
+000148221010             ENDSUBR
+000149221010             SUBR       OPTION3
+000150221010                IF         (&IN30 = '1')  THEN(CHGVAR     &IN30 '0')
+000151221010                CHGVAR     &IN10  '1'
+000152221017                CHGPRF     ??INLPGM(CHANGETHIS)
+000153221017                MONMSG     MSGID(CPF6801)
+000154221017                CHGVAR     &MSGTXT1 ('The initial program for this user profile was changed' )
+000155221017                CHGVAR     &MSGTXT2 ('CLLE Programs can limit the parameters you see for a +
+000156221017                             command')
+000157221017                CHGVAR     &MSGTXT3 ('Set your initial program to *NONE or a viable name or +
+000158221017                             you cant sign back in')
+000160221010             ENDSUBR
+000161221010             SUBR       OPTION4
+000162221010                IF         (&IN30 = '1')  THEN(CHGVAR     &IN30 '0')
+000163221010                CHGVAR     &IN10  '1'
+000164221017                RTVUSRPRF  OUTQ(&OUTQ) OUTQLIB(&OUTQLIB)
+000165221017                CHGVAR     &MSGTXT1      ('Output queue for the current job is' *BCAT &OUTQ +
+000166221017                             *BCAT '/' *BCAT &OUTQLIB)
+000167221017
+000172221010             ENDSUBR
+000174221010             SUBR       OPTION5
+000175221017                IF         (&IN30 = '1' )  THEN(CHGVAR     &IN30 '0')
+000176221010                CHGVAR     &IN10  '1'
+000177221017                RTVSYSVAL  SYSVAL(QCRTAUT) RTNVAR(&QCRTAUT)
+000178221017                CHGVAR     &MSGTXT1 ('The QGPL library Creation Authority is set to *' *CAT +
+000179221017                             &QCRTAUT)
+000181221017                CHGVAR     &MSGTXT2 ('CLLE Programs can report on system values and how they +
+000182221017                             are used')
+000183221017
+000184221010             ENDSUBR
+000185221010             SUBR       OPTION6
+000186221010                IF         (&IN30 = '1') THEN(CHGVAR     &IN30 '0')
+000187221010                CHGVAR     &IN10  '1'
+000188221017                RTVUSRPRF  PRVSIGN(&PVSN) USRPRF(*CURRENT)
+000189221017                RTVUSRPRF  RTNUSRPRF(&MSGQ) USRPRF(*CURRENT)
+000190221017                CHGVAR     &DATE (%SST(&PVSN 4 2) *CAT '/' *CAT %SST(&PVSN 6 2) *CAT '/' *CAT +
+000191221017                             %SST(&PVSN 2 2))
+000192221017                CHGVAR     &TIME (%SST(&PVSN 8 2) *CAT ':' *CAT %SST(&PVSN 10 2) *CAT ':' *CAT +
+000193221017                             %SST(&PVSN 12 2))
+000194221017                CHGVAR     &MSGTXT1 ('Previous sign on for user ' *BCAT &MSGQ *BCAT 'was on ' +
+000195221017                             *CAT &DATE *BCAT &TIME)
+000196221017                CHGVAR     &MSGTXT2 ('CLLE Programs can report on and manage the users on the +
+000197221017                             system')
+000198221017                CHGVAR     &INVALID ' '
+000199221017
+000200221010
+000201221010             ENDSUBR
+000202221010
+000203221010             SUBR       INVALID
+000204221010                CHGVAR     &IN30 '1'
+000205221010                CHGVAR     &IN10 '0'
+000206221010             ENDSUBR
+000207221010
+000208221010
